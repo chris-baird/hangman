@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Hangman</title>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
@@ -17,41 +18,44 @@
     <p>letters go here</p>
   </div>
   <div id="keyboard-area">
-    <table align="center">
+    <table id="keyboard" align="center">
       <tr>
-        <td>A</td>
-        <td>B</td>
-        <td>C</td>
-        <td>D</td>
-        <td>E</td>
-        <td>F</td>
-        <td>G</td>
-        <td>H</td>
+        <td id="a">A</td>
+        <td id="b">B</td>
+        <td id="c">C</td>
+        <td id="d">D</td>
+        <td id="e">E</td>
+        <td id="f">F</td>
+        <td id="g">G</td>
+        <td id="h">H</td>
       </tr>
       <tr>
-        <td>I</td>
-        <td>J</td>
-        <td>K</td>
-        <td>L</td>
-        <td>M</td>
-        <td>N</td>
-        <td>O</td>
-        <td>P</td>
-        <td>Q</td>
+        <td id="i">I</td>
+        <td id="j">J</td>
+        <td id="k">K</td>
+        <td id="l">L</td>
+        <td id="m">M</td>
+        <td id="n">N</td>
+        <td id="o">O</td>
+        <td id="p">P</td>
+        <td id="q">Q</td>
       </tr>
       <tr>
-        <td>R</td>
-        <td>S</td>
-        <td>T</td>
-        <td>U</td>
-        <td>V</td>
-        <td>W</td>
-        <td>X</td>
-        <td>Y</td>
-        <td>Z</td>
+        <td id="r">R</td>
+        <td id="s">S</td>
+        <td id="t">T</td>
+        <td id="u">U</td>
+        <td id="v">V</td>
+        <td id="w">W</td>
+        <td id="x">X</td>
+        <td id="y">Y</td>
+        <td id="z">Z</td>
       </tr>
     </table>
   </div>
-
+  <div id="button-area">
+    <button id="play">Play</button>
+  </div>
+  <script src="js/main.js"></script>
 </body>
 </html>
