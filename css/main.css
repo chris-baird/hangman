@@ -1,0 +1,36 @@
+
+img {
+  height: 400px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+#letters-area {
+  height: 50px;
+  text-align: center;
+}
+
+#hangman-area {
+  text-align: center;
+}
+
+table {
+  border: 1px solid black;
+  width: 300px;
+}
+
+td {
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+td:hover {
+  background-color: red;
+}
