@@ -11,6 +11,14 @@ h3 {
   text-align: center;
 }
 
+p {
+  display: inline-block;
+  margin: 5px;
+  margin-top: -30px;
+  font-size: 100px;
+  height: 10px;
+}
+
 #letters-area {
   height: 50px;
   text-align: center;

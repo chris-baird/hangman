@@ -2,27 +2,30 @@ var wordsList = ['apple', 'hammer', 'cricket', 'mirror', 'grass'];
 
 var temp = [];
 
+var pickedLetters = [];
+
 var wrongPicks = 0;
 
 var rightPicks = 0;
 
-var secretWord
+var secretWord;
+
+var selectedLetter;
 
 
-$('#play').on('click', test);
+$('#play').on('click', init);
 
-$('#keyboard').on('click', test);
-
-
-function test() {
-  console.log('works');
-}
+$('#keyboard').click(function(e) {
+  selectedLetter = $(e.target).text();
+});
 
 
 function init() {
+  wordsList = ['apple', 'hammer', 'cricket', 'mirror', 'grass'];
   shuffleWords(wordsList);
   splitWord();
-  console.log(secretWord);
+  makePickedLetters();
+  addSpaces();
 }
 
 function shuffleWords(array) {
@@ -38,4 +41,16 @@ function shuffleWords(array) {
 function splitWord() {
   temp.push(wordsList.shift());
   secretWord = temp.toString().split('');
+}
+
+function makePickedLetters() {
+  for (i = 0; i < secretWord.length; i++) {
+    pickedLetters.push('');
+  }
+}
+
+function addSpaces() {
+  for (i = 0; i < secretWord.length; i++) {
+    $('#letters-area').append('<p>-</p>');
+  }
 }
