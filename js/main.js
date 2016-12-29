@@ -21,11 +21,22 @@ $('#keyboard').click(function(e) {
 
 
 function init() {
-  wordsList = ['apple', 'hammer', 'cricket', 'mirror', 'grass'];
+  resetVars();
   shuffleWords(wordsList);
   splitWord();
   makePickedLetters();
   addSpaces();
+}
+
+function resetVars() {
+  $('#letters-area').children("p").remove();
+  wordsList = ['apple', 'hammer', 'cricket', 'mirror', 'grass'];
+  temp = [];
+  pickedLetters = [];
+  wrongPicks = 0;
+  rightPicks = 0;
+  secretWord;
+  selectedLetter;
 }
 
 function shuffleWords(array) {
