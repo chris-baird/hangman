@@ -10,7 +10,7 @@ var rightPicks = 0;
 
 var secretWord;
 
-var selectedLetter;
+var selectedLetter = '';
 
 
 $('#play').on('click', init);
@@ -36,7 +36,7 @@ function resetVars() {
   wrongPicks = 0;
   rightPicks = 0;
   secretWord;
-  selectedLetter;
+  selectedLetter = '';
 }
 
 function shuffleWords(array) {
