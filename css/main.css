@@ -19,6 +19,11 @@ p {
   height: 10px;
 }
 
+#letters {
+  text-align: center;
+  font-size: 40px;
+}
+
 #letters-area {
   height: 50px;
   text-align: center;

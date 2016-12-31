@@ -12,11 +12,14 @@ var secretWord;
 
 var selectedLetter = '';
 
+var word;
+
 
 $('#play').on('click', init);
 
 $('#keyboard').click(function(e) {
-  selectedLetter = $(e.target).text();
+  selectedLetter = $(e.target).text().toLowerCase();
+  checkMatch(selectedLetter);
 });
 
 
@@ -62,6 +65,27 @@ function makePickedLetters() {
 
 function addSpaces() {
   for (i = 0; i < secretWord.length; i++) {
-    $('#letters-area').append('<p>-</p>');
+    $('#letters-area').append('<p class="test">_</p>');
   }
 }
+
+function checkMatch(x) {
+  if (secretWord.includes(x)) {
+    for (i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === x) {
+        pickedLetters.splice(i, 1, x);
+        $('p:eq('+i+')').text(x);
+        rightPicks++;
+      }
+    }
+  } else {
+    wrongPicks++;
+  }
+}
+
+
+
+
+
+
+
