@@ -20,6 +20,7 @@ $('#play').on('click', init);
 $('#keyboard').click(function(e) {
   selectedLetter = $(e.target).text().toLowerCase();
   checkMatch(selectedLetter);
+  addPictures(wrongPicks);
 });
 
 
@@ -29,6 +30,7 @@ function init() {
   splitWord();
   makePickedLetters();
   addSpaces();
+  addPictures(wrongPicks);
 }
 
 function resetVars() {
@@ -65,7 +67,7 @@ function makePickedLetters() {
 
 function addSpaces() {
   for (i = 0; i < secretWord.length; i++) {
-    $('#letters-area').append('<p class="test">_</p>');
+    $('#letters-area').append('<p>_</p>');
   }
 }
 
@@ -83,6 +85,42 @@ function checkMatch(x) {
   }
 }
 
+function addPictures(wrongPicks) {
+  switch (wrongPicks) {
+    case 0:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/3.png">');
+      break;
+    case 1:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/4.png">');
+      break;
+    case 2:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/5.png">');
+      break;
+    case 3:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/6.png">');
+      break;
+    case 4:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/7.png">');
+      break;
+    case 5:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/8.png">');
+      break;
+    case 6:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/9.png">');
+      break;
+    case 7:
+      $('#hangman-area').children("img").remove();
+      $('#hangman-area').append('<img src="assets/10.png">');
+      break;
+  }
+}
 
 
 
