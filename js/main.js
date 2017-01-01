@@ -12,17 +12,18 @@ var secretWord;
 
 var selectedLetter = '';
 
-var word;
-
-
 $('#play').on('click', init);
 
 $('#keyboard').click(function(e) {
-  selectedLetter = $(e.target).text().toLowerCase();
-  checkMatch(selectedLetter);
-  addPictures(wrongPicks);
+  if ($(e.target).hasClass('letter')) {
+    selectedLetter = $(e.target).text().toLowerCase();
+    checkMatch(selectedLetter);
+    addPictures(wrongPicks);
+    addHint();
+    applyHide();
+    checkWin();
+  }
 });
-
 
 function init() {
   resetVars();
@@ -34,8 +35,11 @@ function init() {
 }
 
 function resetVars() {
+  $('td').removeClass('hide');
+  $('#keyboard').removeClass('hide');
   $('#letters-area').children("p").remove();
   wordsList = ['apple', 'hammer', 'cricket', 'mirror', 'grass'];
+  $('#hint').text('');
   temp = [];
   pickedLetters = [];
   wrongPicks = 0;
@@ -121,6 +125,49 @@ function addPictures(wrongPicks) {
       break;
   }
 }
+
+function setHint(secretWord) {
+  var word = secretWord.join();
+  switch (word) {
+    case "h,a,m,m,e,r":
+      $('#hint').text('HINT: A handheld tool.');
+      break;
+    case "g,r,a,s,s":
+      $('#hint').text('HINT: Always greener on the other side.');
+      break;
+    case "m,i,r,r,o,r":
+      $('#hint').text('HINT: You look at this.');
+      break;
+    case "a,p,p,l,e":
+      $('#hint').text('HINT: A tasty fruit.');
+      break;
+    case "c,r,i,c,k,e,t":
+      $('#hint').text('HINT: I hop about.');
+      break;
+  }
+}
+
+function addHint() {
+  if (wrongPicks === 4) {
+    setHint(secretWord);
+  }
+}
+
+function applyHide() {
+  $('#' + selectedLetter).addClass('hide');
+}
+
+function checkWin() {
+  if (rightPicks === secretWord.length) {
+    $('#hint').text('YOU WIN!');
+    $('#keyboard').addClass('hide');
+  } else if (wrongPicks === 7) {
+    $('#hint').text('Game Over.');
+    $('#keyboard').addClass('hide');
+  }
+}
+
+init()
 
 
 
