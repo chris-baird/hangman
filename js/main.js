@@ -168,9 +168,3 @@ function checkWin() {
 }
 
 init()
-
-
-
-
-
-
